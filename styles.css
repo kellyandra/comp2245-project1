@@ -164,10 +164,12 @@ input{
     /*position:absolute;*/
    float:inline-start;
    margin-left: 350px;
+   padding: 5px;
 }
 
 button{
 margin-left: -380px;
+padding: 5px;
 
 }
 
@@ -194,5 +196,8 @@ footer {
     padding: 5px;
 }
 
+.message{
+    
+}
 
 
