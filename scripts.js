@@ -1,15 +1,34 @@
 /* Add your JavaScript to this file */
-let email;
-let button= document.getElementsByClassName ('btn');
-let message= document.getElementsByClassName('Message');
+document.addEventListener("DOMContentLoaded", function () {
+    let email = document.querySelector('input[type="submit"]');
+    let buttons= document.getElementsByClassName ('btn');
+    let button = buttons[1];
+    let message= document.getElementsByClassName('Message');
 
-document.getElementsByClassName(btn).onclick = function(){
-    email=document.getElementById("email");
-    console.log(email);
+    button.addEventListener("click", function(event) {
+        event.preventDefault();
+
+        let text= email.innerHTML;
+
+        if (validateEmail(text)) {
+            message.innerHTML=`Thank you! Your email address ${email} has been added to our mailing list!`;
+        } else {
+           return false;
+        }
+
+
+    })
+
+    
+
+
 }
+)
 
-
-
+function validateEmail(email) {
+    var re = /\S+@\S+\.\S+/;
+    return re.test(email);
+  }
 /*function mfunction(){
     message.innerHTML=`Thank you! Your email address ${email} has been added to our mailing list! `;
 }
